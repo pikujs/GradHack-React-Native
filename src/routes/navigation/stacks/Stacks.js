@@ -4,6 +4,8 @@ import { colors } from 'theme'
 import Home from 'scenes/home'
 import Profile from 'scenes/profile'
 import Details from 'scenes/details'
+import Budgeting from 'scenes/budgeting'
+import Community from 'scenes/community'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 
@@ -49,4 +51,30 @@ export const ProfileNavigator = createStackNavigator({
       ...navigationProps,
     }),
   },
+})
+
+export const BudgetingNavigator = createStackNavigator({
+  Budgeting: {
+    screen: Budgeting,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerLeft: <HeaderLeft navigation={navigation} />,
+      headerTitle: <HeaderTitle />,
+      ...navigationProps,
+    }),
+  },
+  
+})
+
+export const CommunityNavigator = createStackNavigator({
+  Community: {
+    screen: Community,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerLeft: <HeaderLeft navigation={navigation} />,
+      headerTitle: <HeaderTitle />,
+      ...navigationProps,
+    }),
+  },
+  
 })

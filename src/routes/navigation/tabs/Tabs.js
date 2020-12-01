@@ -5,7 +5,7 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator } from '../stacks'
+import { HomeNavigator, ProfileNavigator,BudgetingNavigator,CommunityNavigator} from '../stacks'
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -13,10 +13,20 @@ const TabNavigator = createBottomTabNavigator(
       screen: HomeNavigator,
       navigationOptions: { title: 'Home' },
     },
+    BudgetingTab:{
+      screen: BudgetingNavigator,
+      navigationOptions: { title: 'Budgeting'},
+    },
+    CommunityTab:{
+      screen: CommunityNavigator,
+      navigationOptions: { title: 'Community' },
+    },
+    
     ProfileTab: {
       screen: ProfileNavigator,
       navigationOptions: { title: 'Profile' },
     },
+    
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -33,7 +43,26 @@ const TabNavigator = createBottomTabNavigator(
                 solid
               />
             )
-          case 'ProfileTab':
+          
+          case 'BudgetingTab':
+            return(
+              <FontIcon
+                name="dollar-sign"
+                color={focused ? colors.lightPurple : colors.gray}
+                size={25}
+                solid
+              />
+            )
+            case 'CommunityTab':
+              return(
+                <FontIcon
+                  name="users"
+                  color={focused ? colors.lightPurple : colors.gray}
+                  size={20}
+                  solid
+                />
+              )
+            case 'ProfileTab':
             return (
               <FontIcon
                 name="user"

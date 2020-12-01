@@ -14,7 +14,7 @@ module.exports = function(api) {
             modules: './src/modules'
           },
         },
-      ],
+      ],['react-native-paper/babel'],
     ],
   };
 };
