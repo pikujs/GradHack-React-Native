@@ -27,7 +27,7 @@ const Budgeting = ({ navigation }) => {
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>budgeting</Text>
       <Button
-        title="Go Back"
+        title="this is budgeting page"
         color="white"
         backgroundColor={colors.pink}
         onPress={() => {

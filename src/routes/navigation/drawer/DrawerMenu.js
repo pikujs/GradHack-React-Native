@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import { View, SafeAreaView, Text, PanResponder } from 'react-native'
 import { DrawerActions } from 'react-navigation-drawer'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
-
+import {Menu} from 'react-native-paper'
 
 const styles = {
   root: {
@@ -38,7 +38,9 @@ const DrawerMenu = ({ navigation }) => (
       />
     </View>
     <View style={styles.main}>
-      
+      <Menu>
+        <Menu.Item title="Reward"/>
+      </Menu>
     </View>
   </SafeAreaView>
 )

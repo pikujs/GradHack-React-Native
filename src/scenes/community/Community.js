@@ -1,40 +1,100 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  StyleSheet, Text, View, StatusBar,
-} from 'react-native'
-import Button from 'components/Button'
-import { colors } from 'theme'
+  StyleSheet, View, StatusBar,FlatList,SafeAreaView, ScrollView} from 'react-native'
+
+import { Avatar, Button, Card, Title, Paragraph, Divider,Surface,Text } from 'react-native-paper';
+import { lessThan } from 'react-native-reanimated';
+
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.lightGrayPurple,
+    paddingTop:30,
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
   },
+  toptab:{
+    paddingTop:20,
+    paddingBottom:20,
+  },
+  
 })
+
+const TopNav=()=>{
+  const tabdata=[
+    {key: 'LeaderBoard'},
+    {key: 'Challenge'},
+    {key: 'Reward'},
+    {key: 'UserFeed'},
+    {key: 'John'},
+    {key: 'Jillian'},
+    {key: 'Jimmy'},
+    {key: 'Julie'},
+  ];
+  return(
+    <View style={styles.toptab}>
+    <FlatList
+        data={tabdata}
+        horizontal={true}
+        renderItem={({ item, index, separators }) => (
+          <Button color="black">{item.key}</Button>
+        )}
+      />
+    <Divider/>
+    </View>)
+}
 
 const Community = ({ navigation }) => {
   //const { from } = navigation.state.params
   return (
-    <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>Community</Text>
-      <Button
-        title="Go Back"
-        color="white"
-        backgroundColor={colors.pink}
-        onPress={() => {
-          navigation.goBack()
-        }}
-      />
-    </View>
+    <SafeAreaView>
+    <ScrollView>
+     <TopNav/> 
+
+  
+    <Card>
+    <Card.Cover source={require('./pic/money.jpg')} />
+    <Card.Content>
+
+    </Card.Content>
+    <Card.Actions>
+      <Button color="black">Best Budget Manager</Button>
+    </Card.Actions>
+  </Card>
+ 
+  <Card>
+    <Card.Cover source={require('./pic/budgetmanager.jpg')} />
+    <Card.Content>
+     
+    </Card.Content>
+    <Card.Actions>
+      <Button color="black">Best Goal Crusher</Button>
+    </Card.Actions>
+  </Card>
+
+  <Card>
+    <Card.Cover source={require('./pic/resource1.jpg')} />
+    <Card.Content>
+     
+    </Card.Content>
+    <Card.Actions>
+      <Button color="black">Best planner</Button>
+    </Card.Actions>
+  </Card>
+
+  <Card>
+    <Card.Cover source={require('./pic/challenge.jpg')} />
+    <Card.Content>
+     
+    </Card.Content>
+    <Card.Actions>
+      <Button color="black">Best Challenge taker</Button>
+    </Card.Actions>
+  </Card>
+  </ScrollView>
+    </SafeAreaView>
   )
 }
 
