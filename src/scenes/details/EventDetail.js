@@ -27,7 +27,7 @@ const EventDetail = ({ navigation }) => {
   const { from } = navigation.state.params
     return (
         <SafeAreaView>
-              
+              <ScrollView>
                 <View style={styles.root}>
                     <StatusBar barStyle="light-content" />
                     
@@ -69,7 +69,7 @@ const EventDetail = ({ navigation }) => {
                         <Button color="#f70d1a" mode="contained" onPress={() => console.log('Pressed')}>Join Challenge</Button>
                         
                         </View>
-
+                        </ScrollView>
                   
         </SafeAreaView>
   )
