@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import {
   StyleSheet, Text, View, StatusBar,
 } from 'react-native'
-import Button from 'components/Button'
 import { colors } from 'theme'
+import Button from 'components/Button'
+
 
 const styles = StyleSheet.create({
   root: {
@@ -25,7 +26,7 @@ const Details = ({ navigation }) => {
   return (
     <View style={styles.root}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`Details (from ${from})`}</Text>
+      <Text style={styles.title}>{`Details222222 (from ${from})`}</Text>
       <Button
         title="Go Back"
         color="white"

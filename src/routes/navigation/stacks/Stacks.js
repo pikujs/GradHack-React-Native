@@ -5,9 +5,12 @@ import Home from 'scenes/home'
 import Profile from 'scenes/profile'
 import Details from 'scenes/details'
 import Budgeting from 'scenes/budgeting'
-import Community from 'scenes/community'
+import ComNavigator from 'scenes/community'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+
+import LeaderDetail from 'scenes/details/LeaderDetail.js'
+import EventDetail from 'scenes/details/EventDetail.js'
 
 const navigationProps = {
   headerTintColor: 'white',
@@ -26,12 +29,13 @@ export const HomeNavigator = createStackNavigator({
     }),
   },
   Details: {
-    screen: Details,
+    screen: LeaderDetail,
     navigationOptions: () => ({
       title: 'Details',
       ...navigationProps,
     }),
   },
+  
 })
 
 export const ProfileNavigator = createStackNavigator({
@@ -55,7 +59,7 @@ export const ProfileNavigator = createStackNavigator({
 
 export const BudgetingNavigator = createStackNavigator({
   Budgeting: {
-    screen: Budgeting,
+    screen: Profile,
     navigationOptions: ({ navigation }) => ({
       title: 'Profile',
       headerLeft: <HeaderLeft navigation={navigation} />,
@@ -68,13 +72,28 @@ export const BudgetingNavigator = createStackNavigator({
 
 export const CommunityNavigator = createStackNavigator({
   Community: {
-    screen: Community,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Profile',
+    screen: ComNavigator,
+      navigationOptions: ({ navigation }) => ({
+      title: 'Community',
       headerLeft: <HeaderLeft navigation={navigation} />,
       headerTitle: <HeaderTitle />,
       ...navigationProps,
     }),
   },
+  LeaderboardDetails: {
+    screen: LeaderDetail,
+    navigationOptions: () => ({
+      title: 'DLeaderboardDetails',
+      ...navigationProps,
+    }),
+  },
+  EventDetails:{
+    screen: EventDetail,
+    navigationOptions: () => ({
+      title: 'DLeaderboardDetails',
+      ...navigationProps,
+    }),
+  }
+  
   
 })

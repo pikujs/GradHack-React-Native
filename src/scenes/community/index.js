@@ -1,3 +1,3 @@
-import Community from './Community'
+import ComNavigator from './Community'
 
-export default Community
+export default ComNavigator
